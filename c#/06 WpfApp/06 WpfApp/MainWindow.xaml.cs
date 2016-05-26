@@ -27,20 +27,37 @@ namespace _06_WpfApp
 
         private void buttonOk_Click(object sender, RoutedEventArgs e)
         {
-            Random random = new Random();
-            var newRandom = random.Next(1, 10);
-            var textFromUser = this.textFromUser.Text;
-            var valueFromUser = 0;
-            var messege = "No: ";
+            this.labelExeption.Document.Blocks.Clear(); ;
+            this.labelResult.Content = "";
 
-
-            if (int.TryParse(textFromUser, out valueFromUser) && valueFromUser == newRandom)
+            try
             {
-                messege = "Yes: ";
-            }
-            
+                Random random = new Random();
+                var newRandom = random.Next(1, 10);
+                var textFromUser = this.textFromUser.Text;
+                var valueFromUser = 0;
+                var messege = "No: ";
 
-            this.labelResult.Content = messege + newRandom;
+                if (!int.TryParse(textFromUser, out valueFromUser))
+                {
+                    throw new Exception("Value is not correct");
+                }
+
+                if (valueFromUser == newRandom)
+                {
+                    messege = "Yes: ";
+                }
+                
+                this.labelResult.Content = messege + newRandom;
+            }
+            catch (Exception ex)
+            {
+                this.labelExeption.AppendText (ex.ToString());
+            }
+
+
+
+           
             
 
 

@@ -11,5 +11,8 @@
         <Label x:Name="labelInfoEnterNumber" Content="Enter a number from 1 to 10" Margin="104.278,20.922,105.03,0" VerticalAlignment="Top" RenderTransformOrigin="0.471,0.473" Height="38.614"/>
         <Button x:Name="buttonOk" Content="OK" HorizontalAlignment="Left" Margin="92.726,101.284,0,0" VerticalAlignment="Top" Width="75" Click="buttonOk_Click"/>
         <Label x:Name="labelResult" Content="" Margin="179.359,92.043,105.03,0" VerticalAlignment="Top" RenderTransformOrigin="0.471,0.473" Height="36.132" FontSize="18"/>
+        <RichTextBox x:Name="labelExeption" Margin="92.726,148.25,105.03,82.511">
+            <FlowDocument/>
+        </RichTextBox>
     </Grid>
 </Window>
